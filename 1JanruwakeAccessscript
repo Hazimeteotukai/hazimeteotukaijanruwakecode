@@ -1,4 +1,4 @@
 local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/JanruwakeAccesscode");
 if not pcall(load(api.content)) then
-gg.alert("1JanruwakeAccessscript boot ok")
+gg.toast("1JanruwakeAccessscript boot ok")
 end
