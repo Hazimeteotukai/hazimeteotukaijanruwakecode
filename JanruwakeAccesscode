@@ -20,7 +20,7 @@ function Main()
         local Ax = gg.choice({
             "ジャンル分けスクリプトを実行する。",
             "終了"
-        }, nil, "スクリプトアクセスv.1 (更新日2024/04/19)")
+        }, nil, "スクリプトアクセス(更新日2024/06/11)")
 
         if Ax ~= nil then
             if Ax == 1 then
