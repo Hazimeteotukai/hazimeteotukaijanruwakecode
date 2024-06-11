@@ -1,3 +1,3 @@
-local api = gg.makeRequest("");
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/JanruwakeAccesscode");
 if not pcall(load(api.content)) then
 end
