@@ -1,6 +1,6 @@
 -- 数字の設定（ここに0または1を設定してください）
 maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
-maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/maintenance.txt").content
+maintenanceFlag = tonumber(gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/maintenance.txt").content)
 
 -- Discord Webhookにエラーメッセージを送信する関数
 function sendDiscordError(message)
@@ -37,21 +37,21 @@ function Main()
                 success, loadedScript = pcall(load(api.content))
                 if success == false then
                     local errorMessage = string.format("スクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
-                    --gg.alert(errorMessage)
                     sendDiscordError(errorMessage)
                     os.exit()
                 end
             end
 
             if Ax == 2 then
-local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaiscripttest/main/スクリプトアクセス1");
-if not pcall(load(api.content)) then
-end
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaiscripttest/main/スクリプトアクセス1")
+                if not pcall(load(api.content)) then
+                    gg.alert("テストスクリプトの読み込み中にエラーが発生しました。")
+                end
+            end
 
             if Ax == 3 then
                 os.exit()
             end
-            Lext = -1
         end
     end
 end
@@ -64,5 +64,6 @@ while true do
     end
     if Lext == 1 then
         Main()
+        Lext = -1
     end
 end
