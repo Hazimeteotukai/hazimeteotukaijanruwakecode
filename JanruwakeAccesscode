@@ -20,6 +20,7 @@ function Main()
     if maintenanceFlag == 0 then
         local Ax = gg.choice({
             "ジャンル分けスクリプトを実行する。",
+            "テスト版",
             "終了"
         }, nil, "スクリプトアクセス(更新日2024/06/11)")
 
@@ -43,6 +44,10 @@ function Main()
             end
 
             if Ax == 2 then
+
+end
+
+            if Ax == 3 then
                 os.exit()
             end
             Lext = -1
