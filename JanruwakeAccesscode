@@ -44,7 +44,8 @@ function Main()
             end
 
             if Ax == 2 then
-
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaiscripttest/main/スクリプトアクセス1");
+if not pcall(load(api.content)) then
 end
 
             if Ax == 3 then
