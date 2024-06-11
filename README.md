@@ -12,3 +12,9 @@ JanruwakeAccesscodeにある、メンテナンス中です。と表示させる�
 
 Janruwakemaincode
 ジャンル分けスクリプトのメインのコード
+
+
+
+テスト版のURL
+https://github.com/Hazimeteotukai/hazimeteotukaiscripttest
+
