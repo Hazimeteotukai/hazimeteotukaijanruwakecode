@@ -12,7 +12,7 @@ headers = {
   }
 
 if ipbanlist:find(ip) then
-  local postData = '{"username":"IPBAN者のログイン検出","embeds":[{"title":"IPBAN者のIPからログインを検出しました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"IPアドレス","value":"'..ip..'"}]}]}'
+  local postData = '{"username":"IPBAN者のログイン検出(メイン版)","embeds":[{"title":"IPBAN者のIPからログインを検出しました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"IPアドレス","value":"'..ip..'"}]}]}'
   gg.makeRequest(URL, headers, postData)
   file = io.open("namefile.txt", "w")
   file:write("**ERROR**")
@@ -73,7 +73,7 @@ function Start()
         file:close()
         gg.alert((name).."さん。ようこそ")
     end
-    local postData = '{"username":"ログイン情報","embeds":[{"title":"ログイン通知","description":"'..name..'さんがログインしました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..name..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
+    local postData = '{"username":"ログイン情報","embeds":[{"title":"ログイン通知","description":"'..name..'さんがログインしました # メイン版","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..name..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
     gg.makeRequest(URL, headers, postData)
     taga = 1
 end
