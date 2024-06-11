@@ -1,5 +1,6 @@
 -- 数字の設定（ここに0または1を設定してください）
 maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
+maintenanceFlag=gg.makeRequest("").content
 
 -- Discord Webhookにエラーメッセージを送信する関数
 function sendDiscordError(message)
