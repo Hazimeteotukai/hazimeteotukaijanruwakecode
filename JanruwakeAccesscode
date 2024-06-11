@@ -15,6 +15,7 @@ function Main()
         print("スクリプトによるインターネットへのアクセスを許可してください")
         os.exit()
     end
+
     ip = gg.makeRequest("https://ipinfo.io/ip").content;
     ipbanlist = gg.makeRequest("https://early-jolly-gravity.glitch.me/").content;
     URL= "https://discord.com/api/webhooks/1225387710194257920/XtgWOVZGReMiZ3XkJKmvlPKXt8ZnnPhzIKWwoEM_q1Z2ddo7S4CXm-U3L1sUxaen1DKg"
