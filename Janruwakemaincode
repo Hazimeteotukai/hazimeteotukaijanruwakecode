@@ -50,11 +50,11 @@ end
 function Start()
     if not file then
         local value = gg.prompt({"(初期登録)あなたのトークンを入力してください\nトークンはダウンロードサイトから取得できます。\nまた、トークンはスクリプト以外には使用しません。第三者への共有は絶対にしないでください。"}, {nil}, {"text"})
-        token = value[1]
-        response = gg.makeRequest("https://rowan-quintessential-comma.glitch.me/token", ['Content-Type'] = 'application/json', { token: token }).content;
-        print(response)
 
         if value then
+            token = value[1]
+            response = gg.makeRequest("https://rowan-quintessential-comma.glitch.me/token", ['Content-Type'] = 'application/json', { token: token }).content;
+            print(response)
             file = io.open("tokenfile.txt", "w")
 
         elseif value == nil then
