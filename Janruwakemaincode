@@ -2315,6 +2315,7 @@ function FOLDER6()
           "ワールドセールbypass",
           "お金をフリーズ",
           "コインをフリーズ",
+          "9000万送金チート",
           " E X I T "
 }, nil,"おちんこ")
     if MN8 == nil then
@@ -2396,6 +2397,18 @@ gg.processResume()
       end
       if MN8[6] == true then
         ITEM56()
+        gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("16;17;18;19;20;21;22;23;24;25;32:41", gg.TYPE_DWORD)
+        gg.processResume()
+        gg.refineNumber("16", gg.TYPE_DWORD)
+        gg.processResume()
+        revert = gg.getResults(99999)
+        gg.editAll("10000000", gg.TYPE_DWORD)
+        gg.clearResults()
+        gg.sleep(100)
+        local t = gg.getResults(99999)
+        gg.alert("9000万送金チートon")
+        gg.toast("9000万送りたい相手に1000円送ろう！")
       end
       if MN8[7] == true then
         ITEM57()
