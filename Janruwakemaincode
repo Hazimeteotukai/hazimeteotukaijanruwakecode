@@ -2310,7 +2310,7 @@ end
 
 function FOLDER6()
   MN8 = gg.multiChoice({
-          "お金チート(4.8.18.3は出来ません。)",
+          "お金チート(最新バージョン可能ミッション式)",
           "コインチート",
           "ワールドセールbypass",
           "お金をフリーズ",
@@ -2321,18 +2321,26 @@ function FOLDER6()
     else
       if MN8[1] == true then
         ITEM51()
-gg.alert("ロビーで実行")
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("50000000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(300, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("9999999999999", gg.TYPE_FLOAT)
-gg.clearResults(100)
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("2.31009895E29", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(300, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("50000000", gg.TYPE_FLOAT)
-gg.alert("インスタボタンを押して完成。")
-gg.processResume()
+      gg.clearResults()
+        gg.alert("ロビーで実行!")
+        gg.setRanges(gg.REGION_CODE_APP)
+        gg.setVisible(false)
+        gg.searchNumber("50000000", gg.TYPE_FLOAT)  
+        gg.getResults(247)
+gg.editAll("999999999", gg.TYPE_FLOAT)  
+        gg.toast("上限解放完了!")
+        gg.clearResults()    
+        gg.alert("次にレベルに行き、シンプルパーキングを開く!")  
+        gg.sleep(9000)      
+        gg.setRanges(gg.REGION_ANONYMOUS)
+        gg.setVisible(false)
+        gg.searchNumber("40", gg.TYPE_FLOAT)
+        gg.getResults(247)
+        gg.editAll("999999", gg.TYPE_FLOAT)
+        gg.toast("お金チート完成!")       
+        gg.alert("シンプルパーキングをクリアしてからイージーパーキングをクリアしよう！")
+        gg.sleep(15000) 
+        gg.toast("5000万以上にしたい時は何回もイージーパーキングをクリアしよう！")      
       end
       if MN8[2] == true then
         ITEM52()
