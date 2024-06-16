@@ -5,85 +5,72 @@ if time ==nil then
     os.exit()
 end
 ip = gg.makeRequest("https://ipinfo.io/ip").content;
-ipbanlist = gg.makeRequest("https://early-jolly-gravity.glitch.me/").content;
 URL= "https://discord.com/api/webhooks/1225387710194257920/XtgWOVZGReMiZ3XkJKmvlPKXt8ZnnPhzIKWwoEM_q1Z2ddo7S4CXm-U3L1sUxaen1DKg"
 headers = {
     ['Content-Type'] = 'application/json'
   }
 
-if ipbanlist:find(ip) then
-  local postData = '{"username":"IPBAN者のログイン検出(メイン版)","embeds":[{"title":"IPBAN者のIPからログインを検出しました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"IPアドレス","value":"'..ip..'"}]}]}'
-  gg.makeRequest(URL, headers, postData)
-  file = io.open("namefile.txt", "w")
-  file:write("**ERROR**")
-  file:close()
-  file2 = io.open("error.txt", "w")
-  file2:write("ERROR")
-  file2:close()
-  print("あなたはipbanされています¥n Discordのチケットで問い合わせてください。")
-  print(gg.getFile():match('[^/]+$'))
-  os.remove(gg.getFile():match('[^/]+$'))
-  os.exit()
-end
-
 file = io.open("tokenfile.txt", "r")
-file2 = io.open("error.txt", "r")
-
-if file2 then
-    local postData = '{"username":"IPBAN者の抵抗を検出","embeds":[{"title":"IPBAN者の抵抗を検出しました(type:error.txt)","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"IPアドレス","value":"'..ip..'"}]}]}'
-    gg.makeRequest(URL, headers, postData)
-    print("エラーが発生しました")
-    os.remove(gg.getFile():match('[^/]+$'))
-    os.exit()
-elseif file then
-    name = file:read("*all")
-    file:close()
-    if name == "**ERROR**" then
-        local postData = '{"username":"IPBAN者の抵抗を検出","embeds":[{"title":"IPBAN者の抵抗を検出しました(type:namefile.txt)","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"IPアドレス","value":"'..ip..'"}]}]}'
-        gg.makeRequest(URL, headers, postData)
-        print("エラーが発生しました")
-        os.remove(gg.getFile():match('[^/]+$'))
-        os.exit()
-    end
-end
-
+pattern1 = '"username":"(.*)","avatar"'
+pattern2 = '"id":"(.*)","username"'
 function Start()
     if not file then
         local value = gg.prompt({"(初期登録)あなたのトークンを入力してください\nトークンはダウンロードサイトから取得できます。\nまた、トークンはスクリプト以外には使用しません。第三者への共有は絶対にしないでください。"}, {nil}, {"text"})
 
         if value then
             token = value[1]
-            response = gg.makeRequest("https://rowan-quintessential-comma.glitch.me/token", ['Content-Type'] = 'application/json', { token: token }).content;
-            print(response)
+            local url = "https://rowan-quintessential-comma.glitch.me/token"
+            local body = '{"token":"'..token..'"}'
+            response = gg.makeRequest(url, headers, body).content;
+            username = response:match(pattern1)
+            id = response:match(pattern2)
+            if (response == "異常なCookieを検出しました。再ログインしてください。") or (response == "ログインしてください。") then
+                gg.alert("トークンが異常です。もう一度お試しください。")
+                taga = 1
+                Start()
+                return
+            end
             file = io.open("tokenfile.txt", "w")
-
         elseif value == nil then
-            gg.alert("名前が入力されていません。")
+            gg.alert("スクリプトの実行をキャンセルします。")
+            print("スクリプトの実行をキャンセルしました。")
+            os.exit()
+        end
+        if file then
+            file:write(value[1])
+            file:close()
+            gg.alert("トークンを設定しました:"..value[1])
+            gg.alert((username).."さん。ようこそ")
+            name = value[1]
+            local postData = '{"username":"ログイン情報","embeds":[{"title":"初期設定","description":"'..username..'が新しくトークンを設定しました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..username..'"},{"name":"id","value":"'..id..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
+            gg.makeRequest(URL, headers, postData)
+        else
+            print("ファイルを作成できませんでした。")
+            gg.alert("ファイルを作成できませんでした。")
+        end
+    else
+        file = io.open("tokenfile.txt", "r")
+        token = file:read("*all")
+        file:close()
+        local url = "https://rowan-quintessential-comma.glitch.me/token"
+        local body = '{"token":"'..token..'"}'
+        response = gg.makeRequest(url, headers, body).content;
+        username = response:match(pattern1)
+        id = response:match(pattern2)
+
+        if (response == "異常なCookieを検出しました。再ログインしてください。") or (response == "ログインしてください。") then
+            gg.alert("トークンが異常です。トークンを再登録してください")
+            os.remove("tokenfile.txt")
             Start()
         end
-            if file then
-                file:write(value[1])
-                file:close()
-                gg.alert("名前を設定しました:"..value[1])
-                name = value[1]
-                local postData = '{"username":"ログイン情報","embeds":[{"title":"初期設定","description":"'..name..'で新しく名前を設定しました","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..name..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
-                gg.makeRequest(URL, headers, postData)
-            else
-                print("ファイルを作成できませんでした。")
-                gg.alert("ファイルを作成できませんでした。")
-            end
-    else
-        file = io.open("namefile.txt", "r")
-        name = file:read("*all")
-        file:close()
-        gg.alert((name).."さん。ようこそ")
+        gg.alert((username).."さん。ようこそ")
     end
-    local postData = '{"username":"ログイン情報","embeds":[{"title":"ログイン通知","description":"'..name..'さんがログインしました # メイン版","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..name..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
+    local postData = '{"username":"ログイン情報","embeds":[{"title":"ログイン通知","description":"'..username..'さんがログインしました # メイン版","footer":{"text":"'..time..'"},"color":65280,"fields":[{"name":"名前","value":"'..username..'"},{"name":"id","value":"'..id..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
     gg.makeRequest(URL, headers, postData)
     taga = 1
 end
 
-function Change()
+--[[function Change()
     local value = gg.prompt({"名前を入力してください"}, {nil}, {"text"})
 
     if value then
@@ -106,6 +93,7 @@ function Menu1()
     taga=0
     Change()
 end
+]]--
 
 Start()
 
@@ -137,7 +125,7 @@ function HOME()
        "便利系 ",
        "✖中身はありません✖",
        "注意事項",
-       "設定",
+       "✖中身はありません✖",
        " E X I T "
 }, nil,"Car parking Ver.4.8.18.3 更新日2024/06/16")
  if SN == nil then
@@ -3056,6 +3044,7 @@ function WALL74()
 end
 
 function FOLDER10()
+--[[
   MN8 = gg.multiChoice({
           "ログイン名変更",
           "",
@@ -3139,9 +3128,10 @@ function FOLDER10()
    if MN8[25] == true then
      HOME()
      end
-   end
- PUBGMH = -1
- end
+    end
+PUBGMH = -1
+]]
+end
 
 function LITE1()
 end
@@ -3219,7 +3209,7 @@ function EXIT()
 print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣀⢠⡤⠤⠖⠒⠒⠒⠲⣆⠀⠀⠀⠀⣾⠋⠉⠉⠛⢷⠀⣴⠖⠒⠤⣄⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠤⠶⢺⣾⣏⠁⠀⠀⣧⣼⣇⣀⠀⠀⠀⡀⠀⠘⡆⠀⠀⢰⣏⠀⠀⠀⠀⠘⣿⡟⠀⠀⢠⢃⣼⡏⠉⠙⢳⡆⠀⠀⠀⠀⠀⠀⠀⠀           ⠀⠀⠀⣀⡤⠴⠒⠋⠙⣇⣿⠀⠀⠀⣿⣿⠀⠀⠀⢸⣿⣿⣿⠃⠀⢰⣿⡀⠀⠹⡄⠀⢸⣿⠀⠀⠀⠀⠀⢹⡇⠀⠀⢸⡿⣽⠀⠀⠀⡜⠀⣀⡤⠖⠓⠢⢤⣀⠀          ⣠⡴⠒⠉⠁⠀⠀⠀⠀⠀⠸⣿⡇⠀⠀⠘⠛⠃⠀⠀⠈⡟⠉⣿⠀⠀⠘⠛⠃⠀⠀⢷⠀⢸⣿⠀⠀⢠⡀⠀⠀⠀⠀⠀⣿⢧⡇⠀⠀⠸⠗⠚⠁⠀⠀⠀⣀⣠⣾⠃          ⣿⡇⠀⠀⠀⠀⠀⠀⣶⣶⣿⢿⢹⠀⠀⠀⢀⣀⠀⠀⠀⢳⠀⣿⠀⠀⢀⣀⣤⠀⠀⠘⣇⢸⡏⠀⠀⢸⣧⠀⠀⠀⠀⢸⣿⡿⠀⠀⢀⠀⠀⠀⢀⣤⣶⣿⠿⠛⠁⠀          ⢧⣹⣶⣾⣿⡄⠀⠀⠸⡟⠋⠘⡜⡆⠀⠀⢻⣿⡇⠀⠀⢸⡀⣿⠀⠀⢸⣿⡿⡇⠀⠀⢸⣿⡇⠀⠀⢸⡿⡆⠀⠀⠀⣾⣿⠃⠀⠀⣾⡇⠀⠀⠈⡟⠉⠀⠀⠀⠀⠀          ⠘⣿⡿⠿⢿⣧⠀⠀⠀⢳⡀⠀⣇⢱⠀⠀⠈⣿⣷⠀⣀⣸⣷⣿⣤⣤⣼⠋⣇⣹⣶⣶⣾⣿⡿⢲⣶⣾⡇⣿⣤⣀⣀⣿⡏⠀⠀⣼⡏⢧⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠸⡞⣇⠀⠀⠀⢧⠀⢸⣈⣷⣶⣶⣿⣿⣿⣿⣿⣿⣿⣽⣿⡏⢀⡼⠟⠛⠻⢿⡿⠿⠿⣿⣁⣿⣿⣿⣿⣿⣿⣿⣶⣴⢿⠁⢸⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⢹⣼⣦⣤⣶⣿⠁⣀⣿⠿⠿⣿⣫⣿⠉⠁⠀⠀⠀⡏⠀⣴⠏⠀⠀⠀⠀⠀⠹⣆⠀⢠⣿⠀⠀⠀⢈⠟⢻⡿⠿⣅⣘⡆⣸⣇⠀⠀⢸⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠻⠿⠿⠛⠃⢠⣿⣷⣄⠀⠈⠙⠋⠀⠀⠀⠀⣸⢁⡾⠁⠀⠀⣠⣤⡀⠀⠀⠸⣤⡞⡇⠀⠀⠀⢸⣰⣿⠃⠀⠀⢹⣿⣿⣿⣿⣦⣼⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⣿⣾⠇⠀⠀⣸⣿⣿⢿⠀⠀⠀⣿⢁⡇⠀⠀⢀⣿⣿⡏⠀⠀⠀⡼⠀⢙⣿⠛⠻⣏⡀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣷⠀⠀⠀⠀⢸⡿⡿⠀⠀⠀⡏⢹⠟⡟⠀⠀⠀⡿⢸⠀⠀⠀⢸⣿⡿⠀⠀⠀⢠⠇⡰⢋⡏⠀⠀⠀⢙⡆⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⡿⡿⠀⠀⠀⠀⣸⡇⡇⠀⠀⠀⠻⠾⠞⠁⠀⠀⢀⡇⡏⠀⠀⠀⢸⣿⠃⠀⠀⠀⡼⣰⠃⡞⠀⠀⠀⠀⡾⠁⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⡇⠀⠀⠀⠀⣿⣇⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣃⡇⠀⠀⠀⠀⠀⠀⠀⠀⣼⣷⠃⣼⡀⠀⠀⢀⡞⠁⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢸⠃⠀⠀⠀⢀⡇⢿⣿⣧⣀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣽⣿⣷⣤⡞⠁⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣼⣤⣶⣶⣶⡿⠁⠈⢿⣿⣿⣿⣿⣿⣿⣿⠿⠃⢸⣿⣿⣷⣤⣄⣀⣀⣤⣾⣏⣤⡟⠁⠀⠈⠻⡍⠀⠀⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠿⠿⠿⠟⠛⠁⠀⠀⠀⠉⠛⠛⠛⠛⠉⠁⠀⠀⠀⠙⠿⢿⣿⣿⡿⠿⠋⢀⣿⣿⣧⡀⠀⠀⣠⡇⠀⠀⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀          ")
 print("使ってくれてありがとー！")
 
-local postData = '{"username":"ログイン情報","embeds":[{"title":"ログアウト通知","description":"'..name..'さんがログアウトしました","footer":{"text":"'..time..'"},"color":16711680,"fields":[{"name":"名前","value":"'..name..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
+local postData = '{"username":"ログイン情報","embeds":[{"title":"ログアウト通知","description":"'..username..'さんがログアウトしました","footer":{"text":"'..time..'"},"color":16711680,"fields":[{"name":"名前","value":"'..username..'"},{"name":"id","value":"'..id..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
 gg.makeRequest(URL, headers, postData)
 
 gg.skipRestoreState()
