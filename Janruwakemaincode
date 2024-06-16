@@ -109,7 +109,6 @@ end
 
 Start()
 
-
 gg.clearResults() 
 gg.toast("█                                            10% ") 
 gg.sleep(300) 
