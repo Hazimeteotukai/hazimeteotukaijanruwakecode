@@ -21,6 +21,7 @@ function Main()
         local Ax = gg.choice({
             "ジャンル分けスクリプトを実行する。",
             "テスト版",
+            "暗号化",
             "終了"
         }, nil, "スクリプトアクセス(更新日2024/06/11)")
 
@@ -50,6 +51,12 @@ function Main()
             end
 
             if Ax == 3 then
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaiscripttest/main/暗号化")
+                if not pcall(load(api.content)) then
+                    gg.alert("テストスクリプトの読み込み中にエラーが発生しました。")
+                end
+            end
+            if Ax == 4 then
                 os.exit()
             end
         end
