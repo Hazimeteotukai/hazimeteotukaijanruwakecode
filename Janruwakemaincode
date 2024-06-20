@@ -122,12 +122,12 @@ function HOME()
        "車出現",
        "鬼キャン角度",
        "通貨系＆ワーセ",
-       "便利系 ",
+       "バンパー、チートパーツ系",
        "✖中身はありません✖",
        "注意事項",
        "✖中身はありません✖",
        " E X I T "
-}, nil,"Car parking Ver.4.8.18.3 更新日2024/06/16")
+}, nil,"Car parking Ver.4.8.18.3 更新日2024/06/20")
  if SN == nil then
     else
     if SN == 1 then
@@ -2536,44 +2536,69 @@ end
 
 function FOLDER7()
   MN8 = gg.multiChoice({
-          "隔離回避(4.8.18.3では使用できません。)",
-          "課金ホイール解放(4.8.18.3では使用できません。)",
+          "バンパー、チートパーツ",
           " E X I T "
 }, nil,"YOUR HEADING")
     if MN8 == nil then
     else
       if MN8[1] == true then
         WALL1()
-gg.clearResults()
-gg.clearList()
-gg.alert("ロビーで実行")
-gg.setRanges(gg.REGION_CODE_APP)
-gg.searchNumber("-6268592875603357709;-7998318181468767235;4138019057834226259:13", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.refineNumber("-6268592875603357709;-7998318181468767235:13", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-gg.processResume()
-revert = gg.getResults(500, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("-2999674700105252864;3596551104", gg.TYPE_QWORD)
-gg.toast("完成")
-gg.processResume()
+gg.toast("Script Started")
+
+-- メモリ範囲と種類の設定
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.toast("バンパー2を選択してください")
+gg.sleep(4000)
+gg.searchNumber("1", gg.TYPE_DWORD)
+gg.toast("バンパー3を選択して下さい。")
+gg.sleep(40000)
+gg.refineNumber("2", gg.TYPE_DWORD)
+gg.toast("バンパー4を選択して下さい。")
+gg.sleep(4000)
+gg.refineNumber("3", gg.TYPE_DWORD)
+gg.toast("バンパー5を選択して下さい。")
+gg.sleep(4000)
+gg.refineNumber("4", gg.TYPE_DWORD)
+gg.sleep(2000)
+
+-- リスト表示
+local menu = gg.choice(
+    {'バンパーレス', 'ロールバー', 'ルーフボックス', '鉄板', '自分で入力'},
+    nil,
+    'メニュー'
+)
+
+-- リストから選択されて、実行ボタンが押された後の機能
+local function execute()
+    if menu == 1 then
+        gg.editAll("-1", gg.TYPE_DWORD)
+    elseif menu == 2 then
+        gg.editAll("4", gg.TYPE_DWORD)
+    elseif menu == 3 then
+        gg.editAll("6", gg.TYPE_DWORD)
+    elseif menu == 4 then
+        gg.editAll("21", gg.TYPE_DWORD)
+    elseif menu == 5 then
+        local input = gg.prompt({"数値を入力してください"}, nil, {"number"})
+        if input ~= nil then
+            gg.editAll(input[1], gg.TYPE_DWORD)
+        end
+    end
+    gg.alert("完了")
 end
+
+-- 実行ボタンの表示
+gg.alert("リストから選択後、改造したい車に移動し、実行ボタンを押してください")
+local choice = gg.choice({'実行'}, nil, '実行ボタンを押してください')
+
+-- 実行ボタンが押されたら実行
+if choice == 1 then
+    execute()
+end
+
+gg.toast("完了")
       if MN8[2] == true then
         WALL2()
-gg.clearResults()
-gg.clearList()
-gg.setRanges(gg.REGION_CODE_APP)
-LibStart=gg.getRangesList('libil2cpp.so')[2].start
-BELAJAR=nil
-BELAJAR={}
-BELAJAR[1]={}
-BELAJAR[2]={}
-BELAJAR[1].address=LibStart+0x3FFEE84
-BELAJAR[1].value='h200080D2'
-BELAJAR[1].flags=4
-BELAJAR[2].address=LibStart+(0x3FFEE84+0x4)
-BELAJAR[2].value='hC0035FD6'
-BELAJAR[2].flags=4
-gg.setValues(BELAJAR)
-gg.toast("ON")
       end
       if MN8[3] == true then
         WALL3()
