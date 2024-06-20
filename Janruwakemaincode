@@ -2543,7 +2543,7 @@ function FOLDER7()
     else
       if MN8[1] == true then
         WALL1()
-gg.toast("Script Started")
+gg.toast("バンパー選択")
 
 -- メモリ範囲と種類の設定
 gg.setRanges(gg.REGION_ANONYMOUS)
@@ -2568,32 +2568,34 @@ local menu = gg.choice(
     'メニュー'
 )
 
--- リストから選択されて、実行ボタンが押された後の機能
-local function execute()
-    if menu == 1 then
-        gg.editAll("-1", gg.TYPE_DWORD)
-    elseif menu == 2 then
-        gg.editAll("4", gg.TYPE_DWORD)
-    elseif menu == 3 then
-        gg.editAll("6", gg.TYPE_DWORD)
-    elseif menu == 4 then
-        gg.editAll("21", gg.TYPE_DWORD)
-    elseif menu == 5 then
-        local input = gg.prompt({"数値を入力してください"}, nil, {"number"})
-        if input ~= nil then
-            gg.editAll(input[1], gg.TYPE_DWORD)
+if menu == nil then
+    gg.toast("選択がキャンセルされました")
+else
+    -- 実行ボタンの表示
+    gg.toast("リストから選択されました。好きなタイミングで実行ボタンを押してください。")
+    while true do
+        local choice = gg.choice({'実行'}, nil, '実行ボタンを押してください')
+        
+        if choice == 1 then
+            -- 実行ボタンが押されたら実行
+            if menu == 1 then
+                gg.editAll("-1", gg.TYPE_DWORD)
+            elseif menu == 2 then
+                gg.editAll("4", gg.TYPE_DWORD)
+            elseif menu == 3 then
+                gg.editAll("6", gg.TYPE_DWORD)
+            elseif menu == 4 then
+                gg.editAll("21", gg.TYPE_DWORD)
+            elseif menu == 5 then
+                local input = gg.prompt({"数値を入力してください"}, nil, {"number"})
+                if input ~= nil then
+                    gg.editAll(input[1], gg.TYPE_DWORD)
+                end
+            end
+            gg.alert("完了")
+            break
         end
     end
-    gg.alert("完了")
-end
-
--- 実行ボタンの表示
-gg.alert("リストから選択後、改造したい車に移動し、実行ボタンを押してください")
-local choice = gg.choice({'実行'}, nil, '実行ボタンを押してください')
-
--- 実行ボタンが押されたら実行
-if choice == 1 then
-    execute()
 end
 
 gg.toast("完了")
