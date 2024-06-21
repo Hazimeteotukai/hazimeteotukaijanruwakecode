@@ -27,7 +27,7 @@ function Main()
 
         if Ax ~= nil then
             if Ax == 1 then
-                api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/cd3ad4106440b972a0c7e6380d697f4bf8a0d03b/Janruwakemaincode")
+                api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/Janruwakemaincode")
                 if api == nil or api.content == nil then
                     gg.alert("スクリプトを取得できませんでした。")
                     sendDiscordError("スクリプトを取得できませんでした。")
