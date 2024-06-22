@@ -127,7 +127,7 @@ function HOME()
        "注意事項",
        "✖中身はありません✖",
        " E X I T "
-}, nil,"Car parking Ver.4.8.18.3 更新日2024/06/20")
+}, nil,"Car parking Ver.4.8.18.3 更新日2024/06/22")
  if SN == nil then
     else
     if SN == 1 then
