@@ -2599,6 +2599,7 @@ else
 end
 
 gg.toast("完了")
+end
       if MN8[2] == true then
         WALL2()
       end
