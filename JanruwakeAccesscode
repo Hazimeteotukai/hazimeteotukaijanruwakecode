@@ -22,7 +22,7 @@ function Main()
             "ジャンル分けスクリプトを実行する。",
             "準備中",
             "テスト版",
-            "暗号化",
+            "みんなのスクリプト",
             "終了"
         }, nil, "スクリプトアクセス(更新日2024/06/25)")
 
@@ -56,7 +56,7 @@ end
             end
 
             if Ax == 4 then
-                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaiscripttest/main/暗号化")
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/ggscripteveryone/main/everyonescript1")
                 if not pcall(load(api.content)) then
                 end
             end
