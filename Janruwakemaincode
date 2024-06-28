@@ -1245,7 +1245,7 @@ end
 
 function FOLDER4()
   MN8 = gg.multiChoice({
-          "軍用ハマー",
+          "自分で入力",
           "旧X6",
           "旧レンジローバー",
           "シボレー・C/V",
@@ -1285,6 +1285,8 @@ function FOLDER4()
           "フォード・F-150",
           "2022 RAM 1500 TRX",
           "ポルシェ993",
+          "R32",
+          "レゲンデ",
           " E X I T "
 }, nil,"最新バージョンで出てきた車を出現することはできません。")
     if MN8 == nil then
@@ -1292,12 +1294,16 @@ function FOLDER4()
       if MN8[1] == true then
         ITEM1()
 gg.setRanges(gg.REGION_CODE_APP)
-gg.setVisible(false)
+value = gg.prompt({"欲しい車のコードを入力してください"},{305},{"number"})
+if value == nil then
+    print("キャンセルされました")
+    return
+end
 gg.searchNumber("55", gg.TYPE_DWORD)
 gg.getResults(200)
-gg.editAll("281", gg.TYPE_DWORD)
+gg.editAll(value[1], gg.TYPE_DWORD)
 gg.clearResults()
-gg.alert("完成！")
+print("完成！")
       end
       if MN8[2] == true then
         ITEM2()
@@ -1691,19 +1697,31 @@ gg.alert("完成！")
   end
 if MN8[41] == true then
      ITEM41()
-gg.setRanges(gg.REGION_CODE_APP)
-value = gg.prompt({"欲しい車のコードを入力してください"},{305},{"number"})
-if value == nil then
-    print("キャンセルされました")
-    return
+gg.alert("更新中")
 end
+
+if MN8[42] == true then
+     ITEM42()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.setVisible(false)
 gg.searchNumber("55", gg.TYPE_DWORD)
 gg.getResults(200)
-gg.editAll(value[1], gg.TYPE_DWORD)
+gg.editAll("531", gg.TYPE_DWORD)
 gg.clearResults()
-print("完成！")
+gg.alert("完成！")
 end
-   if MN8[42] == true then
+
+if MN8[43] == true then
+     ITEM43()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.setVisible(false)
+gg.searchNumber("55", gg.TYPE_DWORD)
+gg.getResults(200)
+gg.editAll("530", gg.TYPE_DWORD)
+gg.clearResults()
+gg.alert("完成！")
+end
+   if MN8[44] == true then
      HOME()
      end
 end
