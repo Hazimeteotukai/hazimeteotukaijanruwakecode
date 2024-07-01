@@ -123,11 +123,11 @@ function HOME()
        "🛞鬼キャン角度🛞",
        "💰🪙通貨系＆ワーセ🪙💰",
        "🚗バンパー、チートパーツ系🚗",
-       "❌There is nothing in the file❌",
-       "⚠️注意事項⚠️",
-       "◀️戻る。◀️",
-       " E X I T "
-}, nil,"Car parking Ver.4.8.18.3 更新日2024/06/28")
+       "There is nothing in the file",
+       "◀️スクリプト選択画面◀️",
+       "⚙️設定⚙️",
+       "🔚E X I T ☑️"
+}, nil,"Car parking Ver.4.8.18.3 更新日2024/07/01")
  if SN == nil then
     else
     if SN == 1 then
@@ -2926,21 +2926,17 @@ end
 
 function FOLDER9()
   MN8 = gg.multiChoice({
-          "注意事項",
+          "スクリプト選択画面に戻る",
           " E X I T "
 }, nil,"注意")
     if MN8 == nil then
     else
       if MN8[1] == true then
         WALL51()
-gg.alert("ジャンル分けスクリプトを使っていただきありがとうございます。")
-gg.alert("1.注意\n二次配布禁止。スクリプトの許可なく改造は禁止です。")
-gg.alert("2.もし使えなくなったチートがあればdiscordではじめてのおつかいにDMして教えてくれたら幸いです。\n※アプデの影響で使えなくなった可能性があります。")
-gg.alert("使えなくなったチートがあれば、discordのおつかいスクリプトになるべく早く報告します。")
-gg.alert("このスクリプトを使用する時は、私のDiscordサーバーに入ってください。")
-gg.alert("このスクリプトの名前はDiscordと同じ名前にしてください。同じ名前にしない場合はスクリプトが使えなくなります。(ipban)")
-gg.alert("以上です。チートライフを楽しみましょう！")
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/JanruwakeAccesscode");
+if not pcall(load(api.content)) then
       end
+end
       if MN8[2] == true then
         WALL52()
       end
