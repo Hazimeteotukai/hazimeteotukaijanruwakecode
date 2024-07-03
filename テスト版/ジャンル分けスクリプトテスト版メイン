@@ -138,34 +138,34 @@ function HOME()
  if SN == nil then
     else
     if SN == 1 then
-      gg.alert("新機能ないので実行できません。")
+      FOLDER1()
       end
     if SN == 2 then
-      gg.alert("新機能がないので実行できません。")
+      FOLDER2()
      end
     if SN == 3 then 
-      gg.alert("新機能がないので実行できません。")
+      FOLDER3()
      end
     if SN == 4 then
-      gg.alert("新機能がないので実行できません。")
+      FOLDER4()
      end
     if SN == 5 then
-       gg.alert("新機能がないので実行できません。")
+      FOLDER5()
      end
     if SN == 6 then
-       gg.alert("新機能がないので実行できません。")
+      FOLDER6()
       end
     if SN == 7 then
-       gg.alert("新機能がないので実行できません。")
+      FOLDER7()
       end
     if SN == 8 then
-       gg.alert("新機能がないので実行できません。")
+      FOLDER8()
       end
      if SN == 9 then
        FOLDER9()
       end
      if SN == 10 then
-       gg.alert("新機能がないので実行できません。")
+       FOLDER10()
       end
      if SN == 11 then
         EXIT()
