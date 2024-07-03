@@ -58,7 +58,7 @@ function Main()
             end
 
             if Ax == 4 then
-                local api = gg.makeRequest("")
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/みんなのスクリプト/みんなのスクリプト1")
                 if not pcall(load(api.content)) then
                 end
             end
