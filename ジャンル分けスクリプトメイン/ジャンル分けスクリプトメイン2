@@ -49,7 +49,7 @@ gg.alert("準備中")
 end
 
             if Ax == 3 then
-              local api = gg.makeRequest("")
+              local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/テスト版/ジャンル分けスクリプトテスト版1")
                 if not pcall(load(api.content)) then
                     gg.alert("テストスクリプトの読み込み中にエラーが発生しました。")
                 end
