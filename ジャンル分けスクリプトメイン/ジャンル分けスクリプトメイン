@@ -165,7 +165,6 @@ function HOME()
 PUBGMH = -1
 end
 function FOLDER1()
-gg.alert("できないメッキがあれば報告してください。")
   MN8 = gg.multiChoice({
           "鏡メッキ弱",
           "鏡メッキ強",
@@ -2554,7 +2553,7 @@ function FOLDER7()
   MN8 = gg.multiChoice({
           "バンパー、チートパーツ",
           " E X I T "
-}, nil,"YOUR HEADING")
+}, nil,"おぱんつ")
     if MN8 == nil then
     else
       if MN8[1] == true then
@@ -2766,9 +2765,9 @@ end
 
 function FOLDER8()
   MN8 = gg.multiChoice({
-          "なにもありませんんんんｎ",
+          "no folder",
           " E X I T "
-}, nil,"YOUR HEADING")
+}, nil,"ed")
     if MN8 == nil then
     else
       if MN8[1] == true then
