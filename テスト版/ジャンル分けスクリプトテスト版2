@@ -26,7 +26,7 @@ function Main()
 
         if Ax ~= nil then
             if Ax == 1 then
-                api = gg.makeRequest("")
+                api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/テスト版/ジャンル分けスクリプトテスト版メイン")
                 if api == nil or api.content == nil then
                     gg.alert("スクリプトを取得できませんでした。")
                     sendDiscordError("スクリプトを取得できませんでした。")
@@ -36,7 +36,7 @@ function Main()
                 end
                 success, loadedScript = pcall(load(api.content))
                 if success == false then
-                    local errorMessage = string.format("スクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
+                    local errorMessage = string.format("テスト版スクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
                     --gg.alert(errorMessage)
                     sendDiscordError(errorMessage)
                     os.exit()
