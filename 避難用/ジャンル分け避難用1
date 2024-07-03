@@ -1,6 +1,6 @@
 -- 数字の設定（ここに0または1を設定してください）
 maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
-maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/避難用/ジャンル分け避難用メンテナンス設定.txt").content
+maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分け管理/メンテナンス制御/避難用メンテナンス設定").content
 
 -- Discord Webhookにエラーメッセージを送信する関数
 function sendDiscordError(message)
