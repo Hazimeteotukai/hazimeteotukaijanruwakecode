@@ -1,0 +1,68 @@
+-- 数字の設定（ここに0または1を設定してください）
+maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
+maintenanceFlag=gg.makeRequest("").content
+
+-- Discord Webhookにエラーメッセージを送信する関数
+function sendDiscordError(message)
+    local webhookUrl = "https://discord.com/api/webhooks/1226442919356010546/YEjnxLekVS6PiVDOfj6yK4MoB9CaSwpDXmAvx2mXV97JOqYrZe9EZp1s7nbyhcXAJRPP"
+    local payload = string.format('{"content": "%s"}', message)
+    gg.makeRequest(webhookUrl, nil, payload)
+end
+
+function Main()
+    -- 数字が1の場合はメンテナンスメッセージを表示して終了
+    if maintenanceFlag == 1 then
+        gg.alert("テスト版が公開されてません。¥nテストが実施されたらDiscordにて報告します")
+        os.exit()
+    end
+
+    -- 数字が0の場合はスクリプトを実行するオプションを表示
+    if maintenanceFlag == 0 then
+        local Ax = gg.choice({
+            "テスト版ジャンル分けスクリプトを実行する。",
+            "最初の選択画面に戻る",
+            "終了"
+        }, nil, "スクリプトアクセス(更新日2024/06/09)")
+
+        if Ax ~= nil then
+            if Ax == 1 then
+                api = gg.makeRequest("")
+                if api == nil or api.content == nil then
+                    gg.alert("スクリプトを取得できませんでした。")
+                    sendDiscordError("スクリプトを取得できませんでした。")
+                    os.exit()
+                else
+                    gg.alert("スクリプトを正常に取得しました。")
+                end
+                success, loadedScript = pcall(load(api.content))
+                if success == false then
+                    local errorMessage = string.format("スクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
+                    --gg.alert(errorMessage)
+                    sendDiscordError(errorMessage)
+                    os.exit()
+                end
+            end
+
+            if Ax == 2 then
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/JanruwakeAccesscode");
+if not pcall(load(api.content)) then
+      end
+end
+            if Ax == 3 then
+                os.exit()
+            end
+            Lext = -1
+        end
+    end
+end
+
+-- メインループ
+while true do
+    if gg.isVisible(true) then
+        Lext = 1
+        gg.setVisible(false)
+    end
+    if Lext == 1 then
+        Main()
+    end
+end
