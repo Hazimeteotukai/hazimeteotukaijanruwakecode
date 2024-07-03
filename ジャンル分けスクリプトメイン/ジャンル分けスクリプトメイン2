@@ -28,7 +28,7 @@ function Main()
 
         if Ax ~= nil then
             if Ax == 1 then
-                api = gg.makeRequest("")
+                api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
                 if api == nil or api.content == nil then
                     gg.alert("スクリプトを取得できませんでした。")
                     sendDiscordError("スクリプトを取得できませんでした。")
