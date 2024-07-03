@@ -120,7 +120,7 @@ gg.sleep(300)
 gg.toast("███████████████ 100%")  
 gg.sleep(300)
 gg.alert("スクリプトを終了するときは、必ずEXITを押して終了してください。") 
-gg.alert("▫️今使えるジャンル¥n無し")
+gg.alert("▫️今使えるジャンル\n無し")
 function HOME()
   SN = gg.choice({
        "👑メッキ類👑",
