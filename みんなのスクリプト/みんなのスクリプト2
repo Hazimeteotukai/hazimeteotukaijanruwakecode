@@ -1,6 +1,6 @@
 -- 数字の設定（ここに0または1を設定してください）
 maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
-maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/みんなのスクリプト/みんなのスクリプトメンテナンス設定").content
+maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分け管理/メンテナンス制御/みんなのスクリプトメンテナンス設定").content
 
 function Main()
     -- 数字が1の場合はメンテナンスメッセージを表示して終了
