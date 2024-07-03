@@ -2,13 +2,6 @@
 maintenanceFlag = 0  -- 1をメンテナンスモード、0を通常モードとして設定
 maintenanceFlag=gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/みんなのスクリプト/みんなのスクリプトメンテナンス設定").content
 
--- Discord Webhookにエラーメッセージを送信する関数
-function sendDiscordError(message)
-    local webhookUrl = "https://discord.com/api/webhooks/1226442919356010546/YEjnxLekVS6PiVDOfj6yK4MoB9CaSwpDXmAvx2mXV97JOqYrZe9EZp1s7nbyhcXAJRPP"
-    local payload = string.format('{"content": "%s"}', message)
-    gg.makeRequest(webhookUrl, nil, payload)
-end
-
 function Main()
     -- 数字が1の場合はメンテナンスメッセージを表示して終了
     if maintenanceFlag == 1 then
