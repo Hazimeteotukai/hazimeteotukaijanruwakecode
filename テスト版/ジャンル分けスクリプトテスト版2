@@ -12,7 +12,7 @@ end
 function Main()
     -- 数字が1の場合はメンテナンスメッセージを表示して終了
     if maintenanceFlag == 1 then
-        gg.alert("テスト版が公開されてません。¥nテストが実施されたらDiscordにて報告します")
+        gg.alert("テスト版が公開されてません。\nテストが実施されたらDiscordにて報告します")
         os.exit()
     end
 
