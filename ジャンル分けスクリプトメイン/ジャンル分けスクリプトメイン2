@@ -20,7 +20,7 @@ function Main()
     if maintenanceFlag == 0 then
         local Ax = gg.choice({
             "➡️ジャンル分けスクリプトを実行する。⬅️",
-            "❌❓準備中❓❌",
+            "避難用ジャンル分けスクリプト",
             "βテスト版",
             "👬みんなのスクリプト",
             "❌終了🔚"
@@ -45,8 +45,10 @@ function Main()
             end
 
             if Ax == 2 then
-gg.alert("準備中")
-end
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/避難用/ジャンル分け避難用1")
+                if not pcall(load(api.content)) then
+                end
+            end
 
             if Ax == 3 then
               local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/テスト版/ジャンル分けスクリプトテスト版1")
