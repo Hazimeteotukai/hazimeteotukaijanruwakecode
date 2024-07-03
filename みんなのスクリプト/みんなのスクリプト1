@@ -1,1 +1,4 @@
-
+local api = gg.makeRequest("");
+if not pcall(load(api.content)) then
+gg.toast("script　Access everyone 2/1✅")
+end
