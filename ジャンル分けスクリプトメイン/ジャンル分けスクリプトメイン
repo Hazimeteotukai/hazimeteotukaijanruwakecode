@@ -125,7 +125,7 @@ function HOME()
        "◀️スクリプト選択画面◀️",
        "⚙️設定⚙️",
        "🔚E X I T ☑️"
-}, nil,"Car parking Ver.4.8.18.3 更新日2024/07/01")
+}, nil,"Car parking Ver.4.8.18.3 更新日2024/07/03")
  if SN == nil then
     else
     if SN == 1 then
