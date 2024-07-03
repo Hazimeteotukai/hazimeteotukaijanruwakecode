@@ -38,7 +38,7 @@ function Main()
                 end
                 success, loadedScript = pcall(load(api.content))
                 if success == false then
-                    local errorMessage = string.format("スクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
+                    local errorMessage = string.format("メインスクリプトの読み込み中にエラーが発生しました: %s", loadedScript)
                     sendDiscordError(errorMessage)
                     os.exit()
                 end
