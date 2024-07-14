@@ -121,7 +121,7 @@ function HOME()
        "🛞鬼キャン角度🛞",
        "💰🪙通貨系＆ワーセ🪙💰",
        "🚗バンパー、チートパーツ系🚗",
-       "There is nothing in the file",
+       "💕その他チート💕",
        "◀️スクリプト選択画面◀️",
        "⚙️設定⚙️",
        "🔚E X I T ☑️"
@@ -2750,13 +2750,23 @@ end
 
 function FOLDER8()
   MN8 = gg.multiChoice({
-          "no folder",
+          "隔離回避",
           " E X I T "
 }, nil,"ed")
     if MN8 == nil then
     else
       if MN8[1] == true then
         WALL26()
+gg.clearResults()
+gg.clearList()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("7855443137181910015;-504354825169525783;4131527541183886035:25", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("7855443137181910015;-504354825169525783:25", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-2999674700105252864;-504354823401962560", gg.TYPE_QWORD)
+gg.toast("ON")
+gg.processResume()
       end
       if MN8[2] == true then
         WALL27()
