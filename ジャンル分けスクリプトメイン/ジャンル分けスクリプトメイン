@@ -2751,6 +2751,7 @@ end
 function FOLDER8()
   MN8 = gg.multiChoice({
           "隔離回避",
+          "0.0秒レース",
           " E X I T "
 }, nil,"ed")
     if MN8 == nil then
@@ -2770,7 +2771,86 @@ gg.processResume()
       end
       if MN8[2] == true then
         WALL27()
-      end
+valueFromClass("MultiDragRacingControll", "0x124", false, false, gg.TYPE_FLOAT)
+gg.getResults(9999)
+local t = gg.getResults(2)
+   gg.addListItems(t)
+       t = nil
+       gg.setVisible(false)      
+          revert = gg.getListItems()
+local t = gg.getListItems()
+for i, v in ipairs(t) do
+	if v.flags == gg.TYPE_FLOAT then
+		v.value = "55555"
+		v.freeze = false
+		v.freezeType = gg.FREEZE_NORMAL
+	end
+end
+gg.addListItems(t)
+t = nil
+
+o = gg.getResults(1)
+
+local b = {}
+b[1] = {}
+b[1].address = o[1].address + 0x18
+b[1].flags = gg.TYPE_FLOAT
+b[1].value = 9999
+b[1].freeze = true
+		b[1].freezeType = gg.FREEZE_NORMAL
+gg.setValues(b) 
+gg.addListItems(b)
+b = nil
+gg.processResume()
+
+k = gg.getResults(1)
+
+local l = {}
+l[1] = {}
+l[1].address = k[1].address + 0x4
+l[1].flags = gg.TYPE_FLOAT
+l[1].value = 00.00
+l[1].freeze = true
+		l[1].freezeType = gg.FREEZE_NORMAL
+gg.setValues(l) 
+gg.addListItems(l)
+l = nil
+gg.processResume()
+
+
+w = gg.getResults(1)
+
+local q = {}
+q[1] = {}
+q[1].address = w[1].address + 0xc
+q[1].flags = gg.TYPE_FLOAT
+q[1].value = 00.00
+q[1].freeze = true
+		q[1].freezeType = gg.FREEZE_NORMAL
+gg.setValues(q) 
+gg.addListItems(q)
+q = nil
+gg.clearResults()
+gg.setVisible(false)
+gg.toast("SELESAI")
+subMenu()
+gg.toast("Tekan logo GG")
+end
+
+function buyCar()
+local setVis=gg.setVisible
+local isVis=gg.isVisible
+local showmenu=true
+
+
+
+
+ 
+ ::exit:: do
+  setVis(false)
+mainMenu()
+end
+end
       if MN8[3] == true then
         WALL28()
       end
