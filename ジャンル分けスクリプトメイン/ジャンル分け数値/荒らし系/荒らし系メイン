@@ -1,0 +1,67 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
+
+function Main()
+Ax = gg.choice({
+"マスターキー",
+"高速移動",
+"City2吹っ飛ばし",
+"ゲッタン",
+"高度変更",
+"車を浮かす",
+"Bugstart",
+"終了"}, nil, "")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+gg.clearResults()
+gg.clearList()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-6268632488742943745;-6268359819120257034;4140412007990083414:21", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("-6268632488742943745;-6268359819120257034:21", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-2999674700105252832;-6268359818359143488", gg.TYPE_QWORD)
+gg.toast("ON")
+gg.processResume()
+end
+
+if Ax == 2 then
+
+end
+
+if Ax == 3 then
+
+end
+
+if Ax == 4 then
+
+end
+
+if Ax == 5 then
+
+end
+
+if Ax == 6 then
+
+end
+
+if Ax == 7 then
+
+end
+
+if Ax == 8 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
