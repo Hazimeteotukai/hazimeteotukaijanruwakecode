@@ -1,5 +1,3 @@
-Lext = 0
-
 function Main()
     Ax = gg.choice({
     "メッキ",
