@@ -37,7 +37,9 @@ end
 end
 
 if Ax == 3 then
-
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/City2吹っ飛ばし");
+if not pcall(load(api.content)) then
+end
 end
 
 if Ax == 4 then
