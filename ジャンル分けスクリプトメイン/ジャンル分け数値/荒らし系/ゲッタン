@@ -1,0 +1,44 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
+
+function Main()
+Ax = gg.choice({
+"ゲッタンオン",
+"オフ",
+"終了"}, nil, "ゲッタン")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("10000000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-99", gg.TYPE_FLOAT)
+gg.processResume()
+gg.processResume()
+gg.toast("✅ON✅")
+end
+
+if Ax == 2 then
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-99", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("10000000", gg.TYPE_FLOAT)
+gg.processResume()
+gg.processResume()
+gg.toast("✖OFF✖")
+end
+
+if Ax == 3 then
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/荒らし系メイン");
+if not pcall(load(api.content)) then
+end
+end
+
+if Lext == 1 then
+Main()
+end
+end
