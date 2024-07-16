@@ -1,1 +1,376 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
 
+function Main()
+Ax = gg.choice({
+"馬力",
+"mass編集",
+"ギアボックス",
+"終了"}, nil, "")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+d = gg.prompt({"HP","Torque","Inner Hp","Inner Torque","Shift Time"},{[1]=""},{[2]=""},{[3]=""},{[4]=""},{[5]=""}) if d == nil then Menu() end gg.clearResults() gg.setVisible(false) 
+gg.setRanges(gg.REGION_CODE_APP) 
+gg.searchNumber('240',gg.TYPE_FLOAT) 
+gg.getResults(100) 
+gg.editAll(d[1],gg.TYPE_FLOAT) 
+gg.clearResults() 
+gg.sleep(500) 
+gg.setVisible(false) 	
+gg.setRanges(gg.REGION_CODE_APP) 
+gg.searchNumber('310',gg.TYPE_FLOAT) 
+gg.getResults(100) 
+gg.editAll(d[2],gg.TYPE_FLOAT) 
+gg.clearResults() 
+gg.sleep(500) 
+gg.setVisible(false) 	
+gg.setRanges(gg.REGION_CODE_APP) 
+gg.searchNumber('6800',gg.TYPE_FLOAT) 
+gg.getResults(100) 
+gg.editAll(d[3],gg.TYPE_FLOAT) 
+gg.clearResults() 
+gg.sleep(500) 
+gg.setVisible(false) 	
+gg.setRanges(gg.REGION_CODE_APP) 
+gg.searchNumber('4500',gg.TYPE_FLOAT) 
+gg.getResults(20) 
+gg.editAll(d[4],gg.TYPE_FLOAT) 
+gg.clearResults(100) 
+gg.sleep(500) 
+gg.setVisible(false)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("0.1", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(59512, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[5],gg.TYPE_FLOAT)
+gg.alert("V6.3.0エンジンを購入してください。")
+gg.clearResults()
+end
+
+if Ax == 2 then
+gg.clearResults()
+gg.clearList()
+d = gg.prompt({"EDIT MASS CAR "},{[1]=""}) if d == nil then Menu() end gg.clearResults() gg.setVisible(false) 
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("800", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1], gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("980", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1270", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1], gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1050", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1150", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1350", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1700", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1800", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1400", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1320", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1300", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1370", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1200", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1500", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1820", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1090", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1900", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1720", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1250", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("2000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1740", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1650", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1850", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1850", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1140", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1560", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("2300", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("2200", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1614", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1741", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1450", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("3300", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1455", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1520", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1240", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("940", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1460", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1640", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("2400", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1030", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1550", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1690", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1750", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1610", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("3500", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("11000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("2150", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1865", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.processResume()
+ 
+gg.clearResults()
+gg.searchNumber("1540", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1],gg.TYPE_FLOAT)
+gg.clearResults()
+gg.toast("完成")
+end
+
+if Ax == 3 then
+  gg.clearResults()
+gg.clearList()
+d = gg.prompt({"GEARBOX編集"},{[1]=""}) if d == nil then Menu() end gg.clearResults() gg.setVisible(false) 
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("6", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1], gg.TYPE_FLOAT)
+gg.alert("ギアボックスを少し動かしてください。")
+gg.processResume()
+end
+
+if Ax == 4 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
