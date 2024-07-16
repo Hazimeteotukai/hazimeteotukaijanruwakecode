@@ -1,9 +1,3 @@
-while true do
-if gg.isVisible(true) then
-Lext=1
-gg.setVisible(false)
-end
-
 Ax = gg.choice({
 "マスターキー",
 "高速移動",
