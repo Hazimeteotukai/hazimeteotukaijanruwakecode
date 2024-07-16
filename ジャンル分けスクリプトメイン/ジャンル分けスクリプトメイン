@@ -19,7 +19,6 @@ if Ax == 1 then
 local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/車関係チート/車関係チートメイン");
 if not pcall(load(api.content)) then
 　end
-end
 
 if Ax == 2 then
 
@@ -33,7 +32,6 @@ if Ax == 4 then
 local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/バイパス/Bypass");
 if not pcall(load(api.content)) then
 　end
-end
 
 if Ax == 5 then
 
