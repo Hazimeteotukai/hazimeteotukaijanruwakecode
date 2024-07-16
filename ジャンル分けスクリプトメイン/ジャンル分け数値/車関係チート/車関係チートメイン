@@ -7,7 +7,6 @@ Ax = gg.choice({
 "戻る"}, nil, "車関係")
 
 if Ax ~= nil then
-
     if Ax == 1 then
     local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/車関係チート/メッキ");
     pcall(load(api.content))
