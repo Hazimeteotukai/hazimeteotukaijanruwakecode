@@ -1,0 +1,32 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
+
+function Main()
+Ax = gg.choice({
+"浮かす",
+"オフ",
+"戻る"}, nil, "車を浮かす")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+
+end
+
+if Ax == 2 then
+
+end
+
+if Ax == 3 then
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/荒らし系メイン");
+if not pcall(load(api.content)) then
+end
+end
+
+if Lext == 1 then
+Main()
+end
+end
