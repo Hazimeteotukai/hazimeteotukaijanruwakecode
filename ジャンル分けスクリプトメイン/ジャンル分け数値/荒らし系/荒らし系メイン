@@ -49,7 +49,9 @@ end
 end
 
 if Ax == 5 then
-
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/高度変更");
+if not pcall(load(api.content)) then
+end
 end
 
 if Ax == 6 then
