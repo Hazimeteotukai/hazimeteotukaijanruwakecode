@@ -1,0 +1,40 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
+
+function Main()
+Ax = gg.choice({
+"メッキ",
+"馬力",
+"バンパー、移植",
+"鬼キャン",
+"車出現",
+"終了"}, nil, "車関係")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+
+end
+
+if Ax == 2 then
+
+end
+
+if Ax == 3 then
+
+end
+
+if Ax == 4 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
