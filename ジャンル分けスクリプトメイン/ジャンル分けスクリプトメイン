@@ -1,5 +1,4 @@
 taga = 1
-
 time = gg.makeRequest("https://api.aoikujira.com/time/get.php").content;
 if time ==nil then
     print("スクリプトによるインターネットへのアクセスを許可してください")
@@ -144,8 +143,6 @@ function Main()
             print("使ってくれてありがとー！")
             local postData = '{"username":"ログイン情報","embeds":[{"title":"ログアウト通知","description":"'..username..'さんがログアウトしました","footer":{"text":"'..time..'"},"color":16711680,"fields":[{"name":"名前","value":"'..username..'"},{"name":"id","value":"'..id..'"},{"name":"IPアドレス","value":"'..ip..'"}]}]}'
             gg.makeRequest(URL, headers, postData)
-            gg.skipRestoreState()
-            gg.setVisible(true)
             os.exit()
         end
     end
