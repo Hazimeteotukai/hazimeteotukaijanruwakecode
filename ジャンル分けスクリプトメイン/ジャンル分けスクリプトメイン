@@ -7,8 +7,8 @@ end
 function Main()
 Ax = gg.choice({
 "車関係チート",
-"荒らし", 
-"通貨、ワールドセール",
+"荒らし❌", 
+"通貨、ワールドセール❌",
 "バイパス",
 "戻る",
 "終了"}, nil, "α版")
@@ -29,7 +29,8 @@ if Ax == 3 then
 end
 
 if Ax == 4 then
-
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/バイパス/Bypass");
+if not pcall(load(api.content)) then
 end
 
 if Ax == 5 then
