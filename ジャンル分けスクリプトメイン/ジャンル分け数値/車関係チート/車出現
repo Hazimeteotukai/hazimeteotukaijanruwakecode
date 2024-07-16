@@ -1,1 +1,77 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
 
+function Main()
+Ax = gg.choice({
+          "自分で入力",
+          "旧X6",
+          "旧レンジローバー",
+          "シボレー・C/V",
+          "フェアレディZ Z33",
+          "スカイラインGTR",
+          "240SX",
+          "Camry LE",
+          "ベンツ・W210",
+          "M2",
+          "i8",
+          "T680",
+          "X6",
+          "M4",
+          "M5",
+          "W213 E63S AMG",
+          "シボレー・コルベット",
+          "ダッジ・バイパー",
+          "S63 AMG 4MATIC",
+          "ウルス",
+          "コルチネンタル",
+          "AMG・GT",
+          "グランドチェロキー",
+          "M8",
+          "バギー",
+          "720S",
+          "ブガッティ シロン",
+          "旧F1",
+          "新F1",
+          "フーニトラック",
+          "ジムカーナ7",
+          "2017 RAM 1500 Rebel",
+          "CLSクラス",
+          "ロードスター",
+          "MAZ-203",
+          "M3",
+          "2018 Porshe 911 GT3",
+          "フォード・F-150",
+          "2022 RAM 1500 TRX",
+          "ポルシェ993",
+          "R32",
+          "レゲンデ",
+"終了"}, nil, "")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+
+end
+
+if Ax == 2 then
+
+end
+
+if Ax == 3 then
+
+end
+
+if Ax == 4 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
