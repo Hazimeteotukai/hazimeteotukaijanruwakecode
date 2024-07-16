@@ -7,7 +7,7 @@ while true do
     function Main()
         Ax = gg.choice({
             "車関係チート",
-            "荒らし❌", 
+            "荒らし", 
             "通貨、ワールドセール❌",
             "バイパス",
             "戻る",
@@ -23,7 +23,9 @@ while true do
             end
 
             if Ax == 2 then
-                -- 他の処理
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/荒らし系メイン")
+                if not pcall(load(api.content)) then
+                end
             end
 
             if Ax == 3 then
