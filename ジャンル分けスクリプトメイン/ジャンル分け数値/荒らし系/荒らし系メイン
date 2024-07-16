@@ -4,7 +4,6 @@ Lext=1
 gg.setVisible(false)
 end
 
-function Main()
 Ax = gg.choice({
 "マスターキー",
 "高速移動",
