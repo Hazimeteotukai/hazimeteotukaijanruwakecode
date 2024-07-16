@@ -1,0 +1,83 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
+
+function Main()
+Ax = gg.choice({
+"チートパーツ",
+"終了"}, nil, "")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+gg.toast("バンパー選択")
+
+-- メモリ範囲と種類の設定
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.toast("バンパー2を選択してください")
+gg.sleep(4000)
+gg.searchNumber("1", gg.TYPE_DWORD)
+gg.toast("バンパー3を選択して下さい。")
+gg.sleep(40000)
+gg.refineNumber("2", gg.TYPE_DWORD)
+gg.toast("バンパー4を選択して下さい。")
+gg.sleep(4000)
+gg.refineNumber("3", gg.TYPE_DWORD)
+gg.toast("バンパー5を選択して下さい。")
+gg.sleep(4000)
+gg.refineNumber("4", gg.TYPE_DWORD)
+gg.sleep(2000)
+
+-- リスト表示
+local menu = gg.choice(
+    {'バンパーレス', 'ロールバー', 'ルーフボックス', '鉄板', '自分で入力'},
+    nil,
+    'メニュー'
+)
+
+if menu == nil then
+    gg.toast("選択がキャンセルされました")
+else
+    -- 実行ボタンの表示
+    gg.toast("リストから選択されました。好きなタイミングで実行ボタンを押してください。")
+    while true do
+        local choice = gg.choice({'実行'}, nil, '実行ボタンを押してください')
+        
+        if choice == 1 then
+            -- 実行ボタンが押されたら実行
+            if menu == 1 then
+                gg.editAll("-1", gg.TYPE_DWORD)
+            elseif menu == 2 then
+                gg.editAll("4", gg.TYPE_DWORD)
+            elseif menu == 3 then
+                gg.editAll("6", gg.TYPE_DWORD)
+            elseif menu == 4 then
+                gg.editAll("21", gg.TYPE_DWORD)
+            elseif menu == 5 then
+                local input = gg.prompt({"数値を入力してください"}, nil, {"number"})
+                if input ~= nil then
+                    gg.editAll(input[1], gg.TYPE_DWORD)
+                end
+            end
+            gg.alert("完了")
+            break
+        end
+    end
+end
+
+gg.toast("完了")
+end
+
+if Ax == 2 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
