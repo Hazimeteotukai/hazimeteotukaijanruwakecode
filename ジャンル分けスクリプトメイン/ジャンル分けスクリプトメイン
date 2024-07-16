@@ -11,7 +11,7 @@ Ax = gg.choice({
 "通貨、ワールドセール❌",
 "バイパス",
 "戻る",
-"終了"}, nil, "α版")
+"終了"}, nil, "α版6:03")
 
 if Ax ~= nil then
 
@@ -39,7 +39,7 @@ if Ax == 5 then
 
 end
 
-if Ax ==10then
+if Ax ==6 then
 os.exit()
 end
 end
