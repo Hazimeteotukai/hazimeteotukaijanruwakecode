@@ -8,7 +8,7 @@ function Main()
 Ax = gg.choice({
 "高度変更",
 "オフ",
-"終了"}, nil, "高度")
+"戻る"}, nil, "高度")
 
 if Ax ~= nil then
 
