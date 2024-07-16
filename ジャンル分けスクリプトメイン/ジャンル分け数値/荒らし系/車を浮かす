@@ -13,11 +13,23 @@ Ax = gg.choice({
 if Ax ~= nil then
 
 if Ax == 1 then
-
+gg.setRanges(gg.REGION_CODE_APP)
+gg.clearResults()
+gg.searchNumber("0.34", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("9999999", gg.TYPE_FLOAT)
+gg.processResume()
+gg.processResume()
 end
 
 if Ax == 2 then
-
+gg.setRanges(gg.REGION_CODE_APP)
+gg.clearResults()
+gg.searchNumber("9999999", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("0.34", gg.TYPE_FLOAT)
+gg.processResume()
+gg.processResume()
 end
 
 if Ax == 3 then
