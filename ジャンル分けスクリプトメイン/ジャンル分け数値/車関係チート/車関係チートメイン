@@ -42,11 +42,10 @@ if Ax == 5 then
 end
 
 if Ax == 6 then
-os.exit()
-end
-end
-Lext=-1
-end
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
+                if not pcall(load(api.content)) then
+                end
+            end
 
 if Lext == 1 then
 Main()
