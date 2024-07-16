@@ -47,5 +47,6 @@ while true do
     end
     if Lext == 1 then
         Main()
+        Lext = -1
     end
 end
