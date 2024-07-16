@@ -38,15 +38,14 @@ function Main()
     local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
     pcall(load(api.content))
     end
-
-    if Lext == 1 then
-        Main()
-    end
 end
 
 while true do
     if gg.isVisible(true) then
     Lext=1
     gg.setVisible(false)
+    end
+    if Lext == 1 then
+        Main()
     end
 end
