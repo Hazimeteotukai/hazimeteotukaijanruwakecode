@@ -8,7 +8,7 @@ function Main()
 Ax = gg.choice({
 "ゲッタンオン",
 "オフ",
-"終了"}, nil, "ゲッタン")
+"戻る"}, nil, "ゲッタン")
 
 if Ax ~= nil then
 
