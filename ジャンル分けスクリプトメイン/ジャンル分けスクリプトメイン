@@ -1,50 +1,53 @@
 while true do
-if gg.isVisible(true) then
-Lext=1
-gg.setVisible(false)
-end
+    if gg.isVisible(true) then
+        Lext=1
+        gg.setVisible(false)
+    end
 
-function Main()
-Ax = gg.choice({
-"車関係チート",
-"荒らし❌", 
-"通貨、ワールドセール❌",
-"バイパス",
-"戻る",
-"終了"}, nil, "α版6:03")
+    function Main()
+        Ax = gg.choice({
+            "車関係チート",
+            "荒らし❌", 
+            "通貨、ワールドセール❌",
+            "バイパス",
+            "戻る",
+            "終了"
+        }, nil, "α版6:03")
 
-if Ax ~= nil then
+        if Ax ~= nil then
 
-if Ax == 1 then
-local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/車関係チート/車関係チートメイン");
-if not pcall(load(api.content)) then
-　end
+            if Ax == 1 then
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/車関係チート/車関係チートメイン")
+                if not pcall(load(api.content)) then
+                end
+            end
 
-if Ax == 2 then
+            if Ax == 2 then
+                -- 他の処理
+            end
 
-end
+            if Ax == 3 then
+                -- 他の処理
+            end
 
-if Ax == 3 then
+            if Ax == 4 then
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/バイパス/Bypass")
+                if not pcall(load(api.content)) then
+                end
+            end
 
-end
+            if Ax == 5 then
+                -- 他の処理
+            end
 
-if Ax == 4 then
-local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/バイパス/Bypass");
-if not pcall(load(api.content)) then
-　end
+            if Ax == 6 then
+                os.exit()
+            end
+        end
+        Lext=-1
+    end
 
-if Ax == 5 then
-
-end
-
-if Ax ==6 then
-os.exit()
-end
-end
-Lext=-1
-end
-
-if Lext == 1 then
-Main()
-end
+    if Lext == 1 then
+        Main()
+    end
 end
