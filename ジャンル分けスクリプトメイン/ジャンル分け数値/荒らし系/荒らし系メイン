@@ -43,7 +43,9 @@ end
 end
 
 if Ax == 4 then
-
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/荒らし系/ゲッタン");
+if not pcall(load(api.content)) then
+end
 end
 
 if Ax == 5 then
