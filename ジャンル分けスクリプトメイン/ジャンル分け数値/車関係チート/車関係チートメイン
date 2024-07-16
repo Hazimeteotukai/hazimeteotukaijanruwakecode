@@ -35,3 +35,4 @@ if Ax == 6 then
 local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
 pcall(load(api.content))
 end
+end
