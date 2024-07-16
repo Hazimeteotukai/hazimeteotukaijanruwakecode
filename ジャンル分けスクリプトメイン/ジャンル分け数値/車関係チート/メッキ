@@ -1,1 +1,155 @@
+while true do
+if gg.isVisible(true) then
+Lext=1
+gg.setVisible(false)
+end
 
+function Main()
+Ax = gg.choice({
+"鏡メッキ弱",
+"鏡メッキ強",
+"旧メッキ弱",
+"旧メッキ強",
+"終了"}, nil, "車関係、メッキ")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+  gg.setRanges(gg.REGION_ANONYMOUS)
+  gg.setVisible(false)
+  gg.alert("まずはSPECULARからです")
+  gg.sleep(3000)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.searchNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.getResults(100)
+  gg.editAll("10", gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.alert("完成！")
+end
+
+if Ax == 2 then
+gg.setRanges(gg.REGION_ANONYMOUS)
+  gg.setVisible(false)
+  gg.alert("まずはSPECULARからです")
+  gg.sleep(3000)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.searchNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.getResults(100)
+  gg.editAll("20", gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.alert("完成！")
+end
+
+if Ax == 3 then
+ gg.setRanges(gg.REGION_ANONYMOUS)
+  gg.setVisible(false)
+  gg.alert("まずはSPECULARからです")
+  gg.sleep(3000)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.searchNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.getResults(100)
+  gg.editAll("-10", gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.alert("完成！")
+end
+
+if Ax == 4 then
+gg.setRanges(gg.REGION_ANONYMOUS)
+  gg.setVisible(false)
+  gg.alert("まずはSPECULARからです")
+  gg.sleep(3000)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.searchNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.toast("⬇️ダウン⬇️")
+  gg.sleep(3000)
+  gg.refineNumber("0", gg.TYPE_FLOAT)
+  gg.toast("⬆️アップ⬆️")
+  gg.sleep(3000)
+  gg.refineNumber("1", gg.TYPE_FLOAT)
+  gg.getResults(100)
+  gg.editAll("-20", gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.alert("完成！")
+end
+
+if Ax == 5 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
