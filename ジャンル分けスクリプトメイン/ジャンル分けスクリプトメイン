@@ -104,7 +104,7 @@ function Main()
         "通貨、ワールドセール❌",
         "バイパス",
         "終了"
-    }, nil, "α版6:03")
+    }, nil, "ジャンル分けスクリプトv.1\nCar parkingver.4.8.19.4")
 
     if Ax ~= nil then
 
@@ -130,7 +130,8 @@ function Main()
         end
 
         if Ax == 3 then
-            -- 他の処理
+            local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分け数値/通貨系/通貨系")
+            pcall(load(api.content))
         end
 
         if Ax == 4 then
