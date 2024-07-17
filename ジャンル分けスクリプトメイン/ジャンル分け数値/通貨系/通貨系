@@ -1,0 +1,26 @@
+Ax = gg.choice({
+"",
+"",
+"終了"}, nil, "")
+
+if Ax ~= nil then
+
+if Ax == 1 then
+
+end
+
+if Ax == 2 then
+
+end
+
+if Ax == 3 then
+os.exit()
+end
+end
+Lext=-1
+end
+
+if Lext == 1 then
+Main()
+end
+end
