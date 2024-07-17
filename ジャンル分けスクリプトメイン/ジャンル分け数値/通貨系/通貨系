@@ -1,24 +1,98 @@
 Ax = gg.choice({
-"",
-"",
-"終了"}, nil, "")
+"お金チート\nミッション式",
+"コインチート\nロビーで実行",
+"ワールドセール\nロビーで実行",
+"お金フリーズ\nロビーで実行",
+"コインフリーズ\nロビーで実行",
+"9000万送金\nルーム",
+"戻る"}, nil, "")
 
 if Ax ~= nil then
 
 if Ax == 1 then
-
+      gg.clearResults()
+        gg.alert("ロビーで実行!")
+        gg.setRanges(gg.REGION_CODE_APP)
+        gg.setVisible(false)
+        gg.searchNumber("50000000", gg.TYPE_FLOAT)  
+        gg.getResults(247)
+gg.editAll("999999999", gg.TYPE_FLOAT)  
+        gg.toast("上限解放完了!")
+        gg.clearResults()    
+        gg.alert("次にレベルに行き、イージーパーキングを開く!(九秒後に実行)")  
+        gg.sleep(9000)      
+        gg.setRanges(gg.REGION_ANONYMOUS)
+        gg.setVisible(false)
+        gg.searchNumber("120", gg.TYPE_FLOAT)
+        gg.getResults(247)
+        gg.editAll("50000000", gg.TYPE_FLOAT)
+        gg.toast("お金チート完成!")       
+        gg.alert("イージーパーキングをクリアせずに他のミッションを押し、インサイドパーキングをクリアしたら完了")
+        gg.sleep(15000) 
+        gg.toast("5000万以上にしたい時は何回もインサイドパーキングをクリアしよう！")      
 end
 
 if Ax == 2 then
-
+gg.clearResults()
+gg.clearList()
+gg.alert("ロビーで実行")
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-1,28235374E34792,87512967E-14;-1,22028036E-24:9", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("-1,28235374E34;-2,87512967E-14:9", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+revert = gg.getResults(500, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-3,06335187E11;-6,13017998E13", gg.TYPE_FLOAT)
+gg.alert("コイン買う場所押して完了✅")
+gg.processResume()
 end
 
 if Ax == 3 then
-os.exit()
+gg.clearResults()
+gg.clearList()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-6268641292769751051;-6268311401953931276;4136176551760938549:17", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("-6268641292769751051;-6268311401953931276:17", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-2999674700105252832;-6268311401192815680", gg.TYPE_QWORD)
+gg.toast("ミッション開いてロビーに戻ろう")
+gg.processResume()
 end
+
+if Ax == 4 then
+gg.alert("ありません")
 end
-Lext=-1
+
+if Ax == 5 then
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("-6268592876918255628;-7998318181468767235;4129561752906152532:13", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("-6268592876918255628;-7998318181468767235:13", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-2999674700105252832;-7998318180707662912", gg.TYPE_QWORD)
+gg.processResume()
 end
+
+if Ax == 6 then
+        gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber("16;17;18;19;20;21;22;23;24;25;32:41", gg.TYPE_DWORD)
+        gg.processResume()
+        gg.refineNumber("16", gg.TYPE_DWORD)
+        gg.processResume()
+        revert = gg.getResults(99999)
+        gg.editAll("10000000", gg.TYPE_DWORD)
+        gg.clearResults()
+        gg.sleep(100)
+        local t = gg.getResults(99999)
+        gg.alert("9000万送金チートon")
+        gg.toast("9000万送りたい相手に1000円送ろう！")
+end
+
+if Ax == 7 then
+local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
+                if not pcall(load(api.content)) then
+                end
+            end
 
 if Lext == 1 then
 Main()
