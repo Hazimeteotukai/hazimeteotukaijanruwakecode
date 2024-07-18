@@ -1,10 +1,3 @@
-while true do
-if gg.isVisible(true) then
-Lext=1
-gg.setVisible(false)
-end
-
-function Main()
 Ax = gg.choice({
           "😎キャンパー角 15😎",
           "😎キャンパー角 20😎",
