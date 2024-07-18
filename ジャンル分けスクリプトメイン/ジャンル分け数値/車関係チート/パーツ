@@ -7,7 +7,7 @@ end
 function Main()
 Ax = gg.choice({
 "チートパーツ",
-"終了"}, nil, "")
+"戻る"}, nil, "")
 
 if Ax ~= nil then
 
@@ -71,11 +71,10 @@ gg.toast("完了")
 end
 
 if Ax == 2 then
-os.exit()
-end
-end
-Lext=-1
-end
+                local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
+                if not pcall(load(api.content)) then
+                end
+            end
 
 if Lext == 1 then
 Main()
