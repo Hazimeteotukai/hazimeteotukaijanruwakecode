@@ -18,7 +18,7 @@ function Main()
 
     -- 数字が0の場合はスクリプトを実行するオプションを表示
     if maintenanceFlag == 0 then
-        local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けログイン")
+        local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン")
         if api == nil or api.content == nil then
             gg.alert("スクリプトを取得できませんでした。")
             sendDiscordError("スクリプトを取得できませんでした。")
