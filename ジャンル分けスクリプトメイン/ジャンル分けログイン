@@ -1,5 +1,0 @@
-
-local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/ジャンル分けスクリプトメイン/ジャンル分けスクリプトメイン");
-if not pcall(load(api.content)) then
-gg.toast("アクセスおっっkえ")
-end
