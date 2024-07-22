@@ -135,8 +135,6 @@ function Main()
             if api == nil or api.content == nil then
                 gg.alert("スクリプトを取得できませんでした。")
                 os.exit()
-            else
-                gg.alert(api.content)
             end
             success, loadedScript = pcall(load(api.content))
             if success == false then
