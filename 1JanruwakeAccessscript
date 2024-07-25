@@ -1,4 +1,2 @@
-local api = gg.makeRequest("https://raw.githubusercontent.com/Hazimeteotukai/hazimeteotukaijanruwakecode/main/スクリプト一覧");
-if not pcall(load(api.content)) then
-gg.toast("1JanruwakeAccessscript boot ok")
+gg.alert("このスクリプトは使用できません。新しい実行ファイルがアップロードされたのでダウンロードしてください。")
 end
